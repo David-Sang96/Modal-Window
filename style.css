@@ -1,0 +1,119 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body{
+  background-image: linear-gradient(to right bottom,#99A98F,#F97B22);
+  height: 100vh;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.container__miniBox{
+  text-align: center;
+  margin-top: 4rem;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  width: 30%;
+  cursor: pointer;
+  user-select: none;
+}
+.container__miniBox h3{
+  margin-top: 1rem;
+  padding-bottom: .5rem;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #F2E3DB;
+}
+.container__miniBox p {
+  font-size: 2rem;
+  padding: 1rem;
+  color: #40513B;
+}
+.model{
+  display: none;
+  width: 30%;
+  border: .2rem solid rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 2rem;
+  padding: 3rem;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  background-color: #F2E3DB;
+  z-index: 10;
+  user-select: none;
+}
+.model h2{
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.model p{
+  font-size: 2rem;
+}
+.toggle {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.close-modal{
+  font-size: 4rem;
+  position: absolute;
+  top: 0;
+  right: 3%;
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+@media (min-width:300px) and (max-width:1000px){
+  html{
+    font-size: 50.5%;
+  }
+  .container{
+    height: 100vh;
+    margin: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+ .container__miniBox{
+  width: fit-content;
+ }
+ .container__miniBox:first-child{
+  grid-column:1/3;
+  grid-row: 2/1;
+  height: 50%;
+  margin-top: 10rem;
+ }
+ .model{
+  width: 70vw;
+  left: 15%;
+  top: 20%;
+ }
+}
+@media (min-width:1000px) and (max-width:1584px){
+  .container{
+    height: 35vh;
+  }
+}
+@media (min-width:1584px){
+  .container{
+    height: 28vh;
+  }
+}
